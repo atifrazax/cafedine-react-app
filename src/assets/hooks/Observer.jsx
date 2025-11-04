@@ -9,7 +9,7 @@ export const useObserver = () => {
                      observer.unobserve(entry.target); 
                 } 
             });
-        },{threshold: 0.4});
+        },{threshold: 0.2});
     
         const hiddenElements = document.querySelectorAll('.animate');
         hiddenElements.forEach(element => observer.observe(element));
