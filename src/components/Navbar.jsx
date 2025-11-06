@@ -13,6 +13,11 @@ function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
             </div>
             <ul
+              onClick={(e) => {
+              if (e.target.tagName === "A") {
+                document.activeElement.blur();
+              }
+            }}
               tabIndex="-1"
               className="menu menu-lg dropdown-content text-black rounded-box z-1 mt-3 w-52 p-2 shadow gap-y-2 uppercase bg-white/95">
               <li><NavLink to='/' className={activeClass}>Home</NavLink></li>
@@ -57,7 +62,7 @@ function Navbar() {
             <li>
               <details>
                 <summary>Reservations</summary>
-                <ul className="p-2 bg-white text-black">
+                <ul className="p-2 bg-white text-black" onClick={(e)=>{ e.target.closest('details').removeAttribute('open')}}>
                   <li><NavLink to='/reservation' className={activeClass}>Reservation</NavLink></li>
                   <li><NavLink to='/cart' className={activeClass}>Cart</NavLink></li>
                   <li><NavLink to='/shipping' className={activeClass}>Shipping</NavLink></li>
@@ -69,7 +74,7 @@ function Navbar() {
             <li>
               <details>
                 <summary>Blogs</summary>
-                <ul className="p-2 bg-white text-black">
+                <ul className="p-2 bg-white text-black" onClick={(e)=>{ e.target.closest('details').removeAttribute('open')}}>
                   <li><NavLink to='/blogs' className={activeClass}>Blogs</NavLink></li>
                   <li><NavLink to='/blog/1' className={activeClass}>Blog Single</NavLink></li>
                 </ul>
