@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import formatImage from '../utils/formatImage.js'
 
 const fetchDishes = async (category) => {
   try {
@@ -55,15 +56,15 @@ function Dishes() {
               transition-all duration-300
               ${loading ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}>
                 {dishes.map((item)=>(
-                    <div key={item._id} className='flex space-y-0 p-4 border border-dashed m-3 sm:items-center'>
-                        <img src={item.image} alt="Recipe" loading='lazy' className='h-25 w-40 me-4' />
+                    <div key={item?._id} className='flex space-y-0 p-4 border border-dashed m-3 sm:items-center'>
+                        <img src={formatImage(item?.image)} alt={item?.name} loading='lazy' className='h-25 w-40 me-4' />
                         <div className='flex flex-col'>
                             <h5>{item?.name} - 
                                 <span className={item?.salePrice > 0 ? `line-through text-gray-400 ms-2` : `text-primary`}>${item?.price}</span>
                                 { item?.salePrice > 0 && 
                                 <span className='text-primary ms-2'>${item?.salePrice}</span> }
                             </h5>
-                            <p className='overflow-hidden sm:h-auto line-clamp-2'>{item.description}</p>
+                            <p className='overflow-hidden sm:h-auto line-clamp-2'>{item?.description}</p>
                         </div>
                     </div>
                 ))}                

@@ -80,7 +80,7 @@ export default function Dashboard() {
               <tr key={p._id} className="border-b hover:bg-gray-50">
                 <td className="py-3">{p.name}</td>
                 <td className="py-3">{p.unitsSold}</td>
-                <td className="py-3">${p.revenue}</td>
+                <td className="py-3">${p.revenue.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

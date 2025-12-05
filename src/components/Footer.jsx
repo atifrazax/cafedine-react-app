@@ -34,10 +34,10 @@ function Footer() {
                     <span className='font-garamond text-white font-medium'>8:00 AM - 2:00 PM </span>
                 </div>
             </div>
-            <div className='flex flex-col text-center sm:w-1/2 mt-16  text-white'>
-                <h5 className='text-gray'>Get Latest Food Recipe At Your Inbox</h5>
+            <div className='flex flex-col text-center sm:w-1/2 mt-16 text-white'>
+                <h5 className='text-white'>Get Latest Food Recipe At Your Inbox</h5>
                 <div className='relative mt-4 w-full flex justify-center items-center'>
-                    <input type="email" placeholder='Enter Email' className=' w-full bg-[#000] border border-gray-800 p-3 '/>
+                    <input type="email" name='email' autoComplete='true' placeholder='Enter Email' className=' w-full bg-[#000] border border-gray-800 p-3 '/>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute right-3 inline me-2 text-white icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
                 </div>
             </div>

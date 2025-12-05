@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import UpdateModal from '../../components/UpdateModal';
 import DeleteModal from '../../components/DeleteModal';
 import Loader from '../../components/Loader';
-
+import formatImage from '../../utils/formatImage';
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
   const [paginate, setPaginate] = useState({page: 1, limit: 5});
@@ -79,7 +79,7 @@ export default function AdminProducts() {
             <tbody className="bg-white *:odd:bg-gray-100">
               {products.map((product) => (
                 <tr key={product._id}>
-                  <td><img src={product.image} alt={product.name} className='w-10 h-auto rounded' loading='lazy'/></td>
+                  <td><img src={formatImage(product.image)} alt={product.name} className='w-10 h-auto rounded' loading='lazy'/></td>
                   <td>{product.name}</td>
                   <td>{product.category}</td>
                   <td>{product.price}</td>

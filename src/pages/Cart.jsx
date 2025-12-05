@@ -5,6 +5,7 @@ import { useAuth } from "../contexts/useAuth";
 import { useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import formatImage from "../utils/formatImage";
 
 
 export default function Cart() {
@@ -49,30 +50,24 @@ export default function Cart() {
         <section  className="bg-slate-50 py-35">
             {products.length > 0 ? (
                 <>
-            <div className="overflow-x-auto mx-auto max-w-7xl px-4 md:px-6 lg:px-10 flex flex-col sm:flex-col justify-between space-y-2 sm:gap-y-0 ">
-                <ul className="min-w-[800px] flex flex-row justify-center items-center text-center px-4 py-6 gap-0 sm:gap-0 text-black overflow-auto">
-                    <li className="w-1/5"></li>
-                    <li className="w-1/4">Name</li>
-                    <li className="w-1/6">Price</li>
-                    <li className="w-1/6">Quantity</li>
-                    <li className="w-1/6">Total</li>
-                    <li className="w-1/7 text-4xl">&times;</li>
+            <div className="overflow-x-auto mx-auto max-w-7xl px-4 md:px-6 lg:px-10 flex flex-col sm:flex-col justify-between space-y-2 ">
+                <ul className="hidden md:flex-row justify-between items-center px-4 py-6 gap-0 sm:gap-0 text-black overflow-x-auto">
+                    <li>Product</li>
+                    <li>Price & Qty</li>
+                    <li>Total</li>
+                    <li>Delete</li>
                 </ul>
-            {products.map((product, index)=>{
+            {products.map((product)=>{
                 return(
-                    <ul key={index} className="min-w-[800px] flex flex-row justify-between items-center text-center py-2 
-                         text-black  border-y border-gray-300">
-                        <li className="w-1/5">
-                            <img src={product.img} alt="order img" loading="lazy" className="w-20 sm:w-35 h-auto rounded-md"/>
+                    <ul key={product._id} className="flex flex-col sm:flex-row justify-between items-center text-center py-2 
+                         border-y border-gray-300 *:py-2">
+                        <li className=" flex flex-col items-center">
+                            <img src={formatImage(product.img, 900)} alt={product.name} loading="lazy" className="min-w-20 sm:w-35 h-auto rounded-md"/>
+                            <span className="pt-4">{product.name}</span>
                         </li>
-                        <li className="w-1/4 flex flex-col space-y-2">
-                            <span>{product.name}</span>
-                            <p>{product.description}</p>
-                        </li>
-                        <li className="w-1/6">${product.price}</li>
-                        <li className="w-1/6"><input type="number" value={product.qty} min={1} max={10} onChange={e=>updateCart(product._id, e.target.value)} className="text-center px-4 py-2 border border-gray-200 rounded-sm"/></li>
-                        <li className="w-1/6">${(product.price * product.qty).toFixed(2)}</li>
-                        <li className="w-1/7 hover:scale-150 hover:transition duration-300 text-4xl"  onClick={()=>removeFromCart(product._id)}>&times;</li>
+                        <li className="">${product.price} x <input type="number" value={product.qty} min={1} max={10} onChange={e=>updateCart(product._id, e.target.value)} className="text-center px-4 py-2 border border-gray-200 rounded-sm"/></li>
+                        <li className="">${(product.price * product.qty).toFixed(2)}</li>
+                        <li className=" hover:scale-150 hover:transition duration-300"  onClick={()=>removeFromCart(product._id)}>🗑️</li>
                     </ul>
                 )
             })}

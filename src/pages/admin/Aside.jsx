@@ -47,11 +47,11 @@ export default function AdminSidebar({ isOpen, setIsOpen }) {
 
         {/* Menu */}
         <nav className="flex-1 p-3 space-y-1">
-          {menu.map((item) => (
+          {menu.map((item, index) => (
             item.title === "Logout" ? (
               <>
               <Link
-                key={item.path}
+                key={index}
                 to="#"
                 onClick={() => {
                   logout(setUser, navigate); 

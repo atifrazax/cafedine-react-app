@@ -17,6 +17,7 @@ function Banner() {
                 <img
                     src={item.img}
                     loading={index === 0 ? "eager" : "lazy"}
+                    alt="slider image"
                     className="w-full h-[110vh] object-cover object-right" />
             <div className="absolute text-white bottom-40 sm:right-1/3 left-5 sm:left-40 flex-col  ">
                 <div className="text-primary text-4xl font-dancing mb-8">Welcome to CafeDine</div>
