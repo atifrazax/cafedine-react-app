@@ -17,7 +17,6 @@ function SingleBlog() {
     ];
     const {id} = useParams();
     const blog = blogs.find((blog) => blog.id === Number(id));
-    // console.log(blog);
   return (
     <>
     <Loader />

@@ -14,7 +14,7 @@ function Confirmation() {
             <span>Your order hasn’t shipped yet but we will send you an email when it does.</span>
             <div className='flex space-x-4'>
                 <Link to='/recipes' className='bg-black text-white px-4 py-2 font-semibold hover:bg-primary transition duration-300 uppercase'>Back to shop</Link>
-                <Link to='/cart' className='bg-white border text-black px-4 py-2 font-semibold hover:bg-primary transition duration-300 hover:text-white uppercase'>Track Order</Link>
+                <Link to='/orders' className='bg-white border text-black px-4 py-2 font-semibold hover:bg-primary transition duration-300 hover:text-white uppercase'>Track Order</Link>
             </div>
         </div>
     </div>

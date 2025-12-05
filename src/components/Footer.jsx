@@ -1,4 +1,3 @@
-import React from 'react'
 import Socials from './Socials'
 
 function Footer() {
@@ -45,7 +44,7 @@ function Footer() {
         </div>
         <div className="bg-[#000] py-8 text-white/95">
             <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-10 justify-center text-center">
-                <span className='text-sm'>Copyright © {new Date().getFullYear()} All rights reserved | This template is made with ❤️ by <a href="https://atifraza.is-great.net/" className="font-bold uppercase" target="_blank" >Atif</a></span>
+                <span className='text-sm'>© {new Date().getFullYear()} | Made with ❤️ by <a href="https://atifraza.is-great.net/" className="font-bold uppercase" target="_blank" >Atif</a></span>
             </div>
         </div>
     </footer>

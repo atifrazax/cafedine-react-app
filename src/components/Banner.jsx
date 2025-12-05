@@ -16,9 +16,10 @@ function Banner() {
             <div className="relative w-full ">
                 <img
                     src={item.img}
+                    loading={index === 0 ? "eager" : "lazy"}
                     className="w-full h-[110vh] object-cover object-right" />
             <div className="absolute text-white bottom-40 sm:right-1/3 left-5 sm:left-40 flex-col  ">
-                <div className="text-primary text-4xl font-dancing mb-8">Welcome to resturant</div>
+                <div className="text-primary text-4xl font-dancing mb-8">Welcome to CafeDine</div>
                 <p className="sm:text-7xl text-5xl font-semibold font-garamond mb-8">{item.text}</p>
                 <Link to='/recipes' className="uppercase bg-primary px-7 py-3 hover:bg-black transition duration-300">View Menu</Link>
             </div>

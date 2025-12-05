@@ -1,10 +1,9 @@
-import React from 'react'
 
 function About() {
     const data = [
-        {img: '/recipe-2.webp', title: 'Quality Food', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nulla officia sint.'},
-        {img: '/recipe-3.webp', title: 'Friendly Place', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.impedit maiores fugit illo deserunt!'},
-        {img: '/recipe-2.webp', title: 'Affordable Price', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nulla officia sint.'},
+        {img: '/cafe-2.jpg', title: 'Quality Food', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nulla officia sint.'},
+        {img: '/cafe-1.jpg', title: 'Friendly Place', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.impedit maiores fugit illo deserunt!'},
+        {img: '/cafe-4.jpg', title: 'Affordable Price', para: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nulla officia sint.'},
     ]
   return (
     <section className='bg-white pb-30'>

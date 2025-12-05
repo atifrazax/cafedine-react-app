@@ -5,7 +5,6 @@ function BestDishes({img,p}) {
     <section 
       className={`bg-center bg-cover bg-no-repeat w-full h-[70vh] bg-fixed`}
       style={{backgroundImage: `url(${img || '/recipe-2.webp'})`}}
-      aria-hidden="true"
     >
         <div className='flex flex-col justify-center items-center h-[70vh] text-center bg-black/30'>
             <span className='text-white/70 text-2xl mb-4 font-dancing font-bold'>Prepare The Best Dishes</span>

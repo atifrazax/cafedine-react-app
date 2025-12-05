@@ -1,4 +1,3 @@
-import React from 'react'
 import juice from '../assets/icons/juice.svg'
 import basket from '../assets/icons/basket.svg'
 import cake from '../assets/icons/cake.svg'

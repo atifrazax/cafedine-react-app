@@ -2,6 +2,10 @@ import BannerAll from '../components/BannerAll'
 import Loader from '../components/Loader';
 function Reservation() {
     const date = new Date().toISOString().split("T")[0];
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert("Seat Reserved. Testing Only")
+    }
   return (
     <>
     <Loader />
@@ -10,7 +14,7 @@ function Reservation() {
         <div className='flex flex-col space-y-6'>
             <span className='text-primary text-4xl font-dancing font-semibold'>Reservation</span>
             <h2 className='my-4 mb-20 leading-12'>Reserve your seat for betterment</h2>
-            <form className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+            <form onSubmit={handleSubmit} className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 <div className='flex flex-col gap-4'>
                     <label htmlFor="name">Full Name</label>
                     <input type="text" name='name' placeholder='Full Name' className='p-4 border border-primary/10' />
